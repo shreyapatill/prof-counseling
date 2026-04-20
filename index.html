@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shreya Patil — Career Coaching & Interview Prep</title>
+  <style>
+    :root {
+      --color-text-primary: #1a1a1a;
+      --color-text-secondary: #555;
+      --color-text-tertiary: #888;
+      --color-background-primary: #fff;
+      --color-background-secondary: #f5f5f3;
+      --color-border-tertiary: rgba(0, 0, 0, 0.12);
+      --border-radius-md: 8px;
+      --border-radius-lg: 12px;
+      --font-sans: system-ui, -apple-system, sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --color-text-primary: #f0f0f0;
+        --color-text-secondary: #aaa;
+        --color-text-tertiary: #777;
+        --color-background-primary: #1e1e1e;
+        --color-background-secondary: #2a2a2a;
+        --color-border-tertiary: rgba(255, 255, 255, 0.12);
+      }
+    }
+
+    body {
+      background: var(--color-background-primary);
+      margin: 0;
+      padding: 2rem 1rem;
+      font-family: var(--font-sans);
+    }
+
+    .flyer {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: #EEEDFE;
+      color: #3C3489;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-name {
+      font-size: 26px;
+      font-weight: 500;
+      color: var(--color-text-primary);
+      margin: 0 0 4px;
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      margin: 0 0 1rem;
+    }
+
+    .hero-link {
+      font-size: 13px;
+      color: #185FA5;
+      text-decoration: none;
+    }
+
+    .divider {
+      border: none;
+      border-top: 0.5px solid var(--color-border-tertiary);
+      margin: 1.25rem 0;
+    }
+
+    .cred-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 10px;
+      margin-bottom: 1.5rem;
+    }
+
+    .cred-card {
+      background: var(--color-background-secondary);
+      border-radius: var(--border-radius-md);
+      padding: 10px 14px;
+    }
+
+    .cred-num {
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--color-text-primary);
+    }
+
+    .cred-label {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      margin-top: 2px;
+    }
+
+    .network-row {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-text-tertiary);
+      margin: 0 0 0.75rem;
+    }
+
+    .tier-header {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--color-text-primary);
+      margin: 1.25rem 0 0.5rem;
+    }
+
+    .service-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 7px 0;
+      border-bottom: 0.5px solid var(--color-border-tertiary);
+    }
+
+    .service-name {
+      font-size: 14px;
+      color: var(--color-text-primary);
+    }
+
+    .service-note {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      margin-left: 6px;
+    }
+
+    .service-price {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--color-text-primary);
+      white-space: nowrap;
+    }
+
+    .save-badge {
+      font-size: 11px;
+      background: #EAF3DE;
+      color: #3B6D11;
+      padding: 2px 8px;
+      border-radius: 20px;
+      margin-left: 8px;
+    }
+
+    .flagship {
+      background: var(--color-background-primary);
+      border: 2px solid #AFA9EC;
+      border-radius: var(--border-radius-lg);
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+    }
+
+    .flagship-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--color-text-primary);
+      margin-bottom: 4px;
+    }
+
+    .flagship-desc {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+
+    .flagship-prices {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .price-pill {
+      background: var(--color-background-secondary);
+      border-radius: var(--border-radius-md);
+      padding: 6px 14px;
+      font-size: 13px;
+      color: var(--color-text-primary);
+    }
+
+    .price-pill span {
+      display: block;
+      color: var(--color-text-secondary);
+      font-size: 12px;
+    }
+
+    .cta-row {
+      margin-top: 1.5rem;
+      background: #EEEDFE;
+      border-radius: var(--border-radius-lg);
+      padding: 1rem 1.25rem;
+    }
+
+    .cta-text {
+      font-size: 13px;
+      color: #3C3489;
+      font-weight: 500;
+      margin-bottom: 2px;
+    }
+
+    .cta-sub {
+      font-size: 12px;
+      color: #534AB7;
+      margin-bottom: 8px;
+    }
+
+    .cta-email {
+      font-size: 13px;
+      color: #3C3489;
+      font-weight: 500;
+    }
+
+    .pricing-note {
+      margin-top: 1.25rem;
+      font-size: 12px;
+      color: var(--color-text-tertiary);
+      text-align: center;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="flyer">
+    <div class="badge">Career Coaching &amp; Interview Prep</div>
+    <div class="hero-name">Shreya Patil</div>
+    <div class="hero-sub">UIUC &amp; Georgia Tech Engineering · Ex-FAANG · Nonprofit &amp; Startup Leader</div>
+    <a class="hero-link" href="https://www.linkedin.com/in/shreya-patilll/"
+      target="_blank">linkedin.com/in/shreya-patilll ↗</a>
+
+    <hr class="divider">
+
+    <div class="cred-grid">
+      <div class="cred-card">
+        <div class="cred-num">1,000+</div>
+        <div class="cred-label">Candidates interviewed across companies, nonprofits, startups &amp; other organizations
+        </div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-num">FAANG+</div>
+        <div class="cred-label">Final round interviews &amp; offers at Spotify, Bloomberg, Microsoft, Cap One, Applied
+          Intuition, Atlassian &amp; more, in a tough market</div>
+      </div>
+      <div class="cred-card">
+        <div class="cred-num">3 Nonprofits</div>
+        <div class="cred-label">Led 501(c)(3)s with professional development focus · Co-founded/led 5 student
+          startups</div>
+      </div>
+    </div>
+
+    <div class="network-row">
+      Mentored students &amp; professionals across STEM, humanities, business, etc · 4 internships, 3 funded research
+      positions, 4
+      student jobs, 2 full-time roles · Deeply experienced in resume review, mock interviews &amp; professional
+      development · Network spans FAANG, MBB, Big Four, Big Pharma, and top startups
+    </div>
+
+    <hr class="divider">
+    <div class="section-label">Services</div>
+
+    <div class="tier-header">Quick turnaround</div>
+    <div class="service-row">
+      <span class="service-name">Resume review <span class="service-note">with written feedback</span></span>
+      <span class="service-price">$45</span>
+    </div>
+    <div class="service-row">
+      <span class="service-name">LinkedIn profile review <span class="service-note">with written feedback</span></span>
+      <span class="service-price">$35</span>
+    </div>
+    <div class="service-row">
+      <span class="service-name">Professional counseling session <span class="service-note">1:1 strategy
+          call</span></span>
+      <span class="service-price">$40</span>
+    </div>
+
+    <div class="tier-header">Full builds</div>
+    <div class="service-row">
+      <span class="service-name">Resume development <span class="service-note">built from scratch or major
+          overhaul</span></span>
+      <span class="service-price">$200</span>
+    </div>
+    <div class="service-row">
+      <span class="service-name">LinkedIn development</span>
+      <span class="service-price">$150</span>
+    </div>
+    <div class="service-row">
+      <span class="service-name">GitHub / portfolio development</span>
+      <span class="service-price">$200</span>
+    </div>
+    <div class="service-row">
+      <span class="service-name">Resume + LinkedIn bundle <span class="save-badge">Save $50</span></span>
+      <span class="service-price">$300</span>
+    </div>
+
+    <div class="tier-header">Flagship package</div>
+    <div class="flagship">
+      <div class="flagship-title">Personalized development package — get to the interview</div>
+      <div class="flagship-desc">Resume, LinkedIn, application assistance, and additional profile sites. Everything
+        tailored to your target roles and companies. Optional portfolio add-on.</div>
+      <div class="flagship-prices">
+        <div class="price-pill"><span>Without portfolio</span>$400</div>
+        <div class="price-pill"><span>With portfolio</span>$500</div>
+      </div>
+    </div>
+
+    <div class="tier-header">Interview prep</div>
+    <div class="service-row">
+      <span class="service-name">Coding interview prep <span class="service-note">company-specific sessions
+          available</span></span>
+      <span class="service-price">$50 / session</span>
+    </div>
+    <div class="service-row">
+      <span class="service-name">Behavioral / other interview prep</span>
+      <span class="service-price">$30 / session</span>
+    </div>
+
+    <div class="cta-row">
+      <div class="cta-text">Free 15-min discovery call</div>
+      <div class="cta-sub">Let's figure out what you need before you commit to anything</div>
+      <div class="cta-email">shreyapatil0120@gmail.com</div>
+    </div>
+
+    <div class="pricing-note">Prices may be adjusted based on individual need — reach out to discuss.</div>
+  </div>
+</body>
+
+</html>
